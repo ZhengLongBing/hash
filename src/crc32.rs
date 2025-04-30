@@ -136,6 +136,9 @@ impl CRC32 {
 }
 
 impl Hasher for CRC32 {
+    fn block_size(&self) -> usize {
+        64
+    }
     fn update(&mut self, data: &[u8]) {
         self.update(data);
     }

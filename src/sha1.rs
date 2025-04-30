@@ -219,6 +219,9 @@ impl SHA1 {
 }
 
 impl Hasher for SHA1 {
+    fn block_size(&self) -> usize {
+        64
+    }
     fn update(&mut self, data: &[u8]) {
         self.update(data);
     }

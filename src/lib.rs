@@ -7,8 +7,11 @@ pub mod sha256;
 pub mod sha512;
 pub mod sm3;
 
+
+
 // 定义Hash特征
 pub trait Hasher {
+    fn block_size(&self) -> usize;
     fn update(&mut self, data: &[u8]);
     fn finalize(&mut self) -> Vec<u8>;
     fn reset(&mut self);
